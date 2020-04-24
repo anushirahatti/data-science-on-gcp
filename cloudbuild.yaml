@@ -1,5 +1,34 @@
-steps:
-- name: "gcr.io/cloud-builders/docker"
-  args: ['build', '-t', 'gcr.io/$PROJECT_ID/data-science-on-gcp', '.']
-images: ['gcr.io/$PROJECT_ID/data-science-on-gcp']
-timeout: "1600s"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloudbuild
+  labels:
+    app: app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: app
+  template:
+    metadata:
+      labels:
+        app: app
+    spec:
+      containers:
+      - name: app
+        image: app:1.0.0
+        resources:
+            requests:
+                memory: "32Mi"
+                cpu: "200m"
+            limits:
+                memory: "64Mi"
+                cpu: "250m"
+        ports:
+        - containerPort: 80
+        
+#steps:
+#- name: "gcr.io/cloud-builders/docker"
+#  args: ['build', '-t', 'gcr.io/$PROJECT_ID/data-science-on-gcp', '.']
+#images: ['gcr.io/$PROJECT_ID/data-science-on-gcp']
+#timeout: "1600s"
