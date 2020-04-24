@@ -27,8 +27,8 @@ spec:
         ports:
         - containerPort: 80
         
-#steps:
-#- name: "gcr.io/cloud-builders/docker"
-#  args: ['build', '-t', 'gcr.io/$PROJECT_ID/data-science-on-gcp', '.']
-#images: ['gcr.io/$PROJECT_ID/data-science-on-gcp']
-#timeout: "1600s"
+steps:
+- name: "gcr.io/cloud-builders/docker"
+  args: ['build', '-t', 'gcr.io/$PROJECT_ID/app:latest', '.']
+images: ['gcr.io/$PROJECT_ID/app']
+timeout: "1600s"
