@@ -9,4 +9,4 @@ COPY . main.py /data-science-on-gcp/
 # Install packages from requirements.txt
 # hadolint ignore=DL3013
 RUN pip install --upgrade pip &&\
-    pip install --trusted-host pypi.python.org -r requirements.txt
+		pip install -r requirements.txt
