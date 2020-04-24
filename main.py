@@ -1,23 +1,12 @@
-#push
 from flask import Flask
-from flask import jsonify
+
+import config
 
 app = Flask(__name__)
 
-@app.route('/')
+@app.route("/")
 def hello():
-    """Return a friendly HTTP greeting."""
-    return '<center><h1>Hello Data Science and ML!</h1></center>'
+    return "Hello World!"
 
-@app.route('/deliver')
-def hey():
-    """Return a friendly HTTP greeting."""
-    return '<center><h1>Continuous Delivery on GCP Success!</h1><center>'
-    
-@app.route('/name/<value>')
-def name(value):
-    val = {"value": value}
-    return jsonify(val)
-
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', port=8080, debug=True)
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=config.PORT, debug=config.DEBUG_MODE)
