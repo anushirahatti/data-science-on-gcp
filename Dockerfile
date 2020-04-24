@@ -1,12 +1,12 @@
 FROM python:3.7.3-stretch
 
 # Working Directory
-WORKDIR /data-science-on-gcp
+WORKDIR /app
 
 # Copy source code to working directory
-COPY . main.py /data-science-on-gcp/
+COPY . main.py /app/
 
 # Install packages from requirements.txt
 # hadolint ignore=DL3013
 RUN pip install --upgrade pip &&\
-		pip install -r requirements.txt
+    pip install --trusted-host pypi.python.org -r requirements.txt
