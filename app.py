@@ -1,9 +1,23 @@
-#!/usr/bin/env python
-import click
+#push
+from flask import Flask
+from flask import jsonify
 
-@click.command()
+app = Flask(__name__)
+
+@app.route('/')
 def hello():
-    click.echo('Hello Aniruddha!')
+    """Return a friendly HTTP greeting."""
+    return '<center><h1>Hello Aniruddha!</h1></center>'
+
+@app.route('/deliver')
+def hey():
+    """Return a friendly HTTP greeting."""
+    return '<center><h1>Continuous Delivery on GCP Success!</h1><center>'
+    
+@app.route('/name/<value>')
+def name(value):
+    val = {"value": value}
+    return jsonify(val)
 
 if __name__ == '__main__':
-    hello()
+    app.run(host='127.0.0.1', port=8080, debug=True)
