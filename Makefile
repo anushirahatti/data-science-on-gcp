@@ -1,5 +1,5 @@
 setup:
-	python3 -m venv ~/.docker-container-project
+	python3 -m venv ~/.data-science-on-gcp
 
 install:
 	pip install --upgrade pip &&\
