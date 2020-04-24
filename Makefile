@@ -1,5 +1,5 @@
 setup:
-	python3 -m venv ~/.data-science-on-gcp
+	python3 -m venv ~/.docker-container-project
 
 install:
 	pip install --upgrade pip &&\
@@ -16,6 +16,6 @@ run-circleci-local:
 
 lint:
 	hadolint Dockerfile 
-	pylint --disable=R,C,W1203 main.py
+	pylint --disable=R,C,W1203 app.py
 
 all: install lint test

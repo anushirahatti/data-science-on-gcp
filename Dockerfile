@@ -1,8 +1,12 @@
-FROM python:3.6-jessie
-RUN apt update
+FROM python:3.7.3-stretch
+
+# Working Directory
 WORKDIR /data-science-on-gcp
-ADD requirements.txt /data-science-on-gcp/requirements.txt
-RUN pip install -r /data-science-on-gcp/requirements.txt
-ADD . /data-science-on-gcp
-ENV PORT 8080
-CMD ["gunicorn", "app:main", "--config=config.py"]
+
+# Copy source code to working directory
+COPY . app.py /data-science-on-gcp/
+
+# Install packages from requirements.txt
+# hadolint ignore=DL3013
+RUN pip install --upgrade pip &&\
+    pip install --trusted-host pypi.python.org -r requirements.txt
