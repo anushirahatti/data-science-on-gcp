@@ -17,8 +17,8 @@ spec:
     spec: 
       containers: 
         - 
-          image: "nginx:1.14.2"
-          name: nginx
+          image: "gcr.io/${GOOGLE_CLOUD_PROJECT}/data-science-on-gcp:v2"
+          name: data-science-on-gcp
           ports: 
             - 
               containerPort: 80
