@@ -10,7 +10,7 @@ dockerpath="anushirahatti/data-science-on-gcp"
 # Authenticate & Tag
 echo "Docker ID and Image: $dockerpath"
 docker login &&\
-    docker image tag c7654e313034 $dockerpath
+    docker image tag b48c810fe868 $dockerpath
 
 # Push Image
 docker image push $dockerpath 
