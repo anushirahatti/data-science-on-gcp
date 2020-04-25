@@ -3,3 +3,6 @@ pytest
 pylint
 numpy
 click
+matplotlib
+pandas
+sklearn
