@@ -24,6 +24,11 @@ Aniruddha Sudhindra Shirahatti, Homeira Azari, Jack Phillips, Mrunmayee Kulkarni
 8. Integrate CirecleCI.
 9. Monitor the application.
 
+#### Pending Tasks for Final Project delivery:
+1. Build and Rollout new Flask App (Housing Affordability Prediction App).
+2. Testing elastic scale-up performance using Locust (1K+ requests per second).
+3. Implement Cloud Monitoring to monitor the performance of our app.
+
 #### Docker Image on dockerhub:
 https://hub.docker.com/r/anushirahatti/data-science-on-gcp
 
