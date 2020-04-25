@@ -24,5 +24,8 @@ Aniruddha Sudhindra Shirahatti, Homeira Azari, Jack Phillips, Mrunmayee Kulkarni
 8. Integrate CirecleCI.
 9. Monitor the application.
 
+#### Docker Image on dockerhub:
+![Docker Container](https://hub.docker.com/r/anushirahatti/data-science-on-gcp)
+
 #### Demo Video:
 Link here..
